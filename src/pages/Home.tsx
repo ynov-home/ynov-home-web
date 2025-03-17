@@ -6,14 +6,12 @@ const Home: React.FC = () => {
         <div className="flex flex-col items-center justify-center min-h-screen bg-background text-text px-6">
             {/* Titre animé */}
             <h1 className="text-5xl font-bold text-primary animate-pulse text-center">
-                🚀 Bienvenue sur AI Pairing
+                🚀 Bienvenue sur Ynov-home
             </h1>
 
             {/* Sous-titre */}
             <p className="text-gray-400 text-lg text-center mt-4 max-w-2xl">
-                Une plateforme innovante qui utilise l'intelligence artificielle pour
-                optimiser la collaboration et la productivité des développeurs.
-                Trouvez vos binômes idéaux pour coder plus efficacement !
+                Le site de gestion de votre maison connect
             </p>
 
 
