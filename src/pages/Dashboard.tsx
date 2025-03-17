@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import dotenv from "dotenv";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import { IAppareil } from "./Assets/IAppareil";
 
-dotenv.config();
-
-const url = `${process.env.API_URL}/dashboard`;
+const API_URL = "LLL";
+const url = `${API_URL}/dashboard`;
 
 const Dashboard = () => {
-	const [appareils, setAppareils] = useState([]);
+	const [appareils, setAppareils] = useState<IAppareil[]>([]);
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -25,6 +23,15 @@ const Dashboard = () => {
 
 		fetchAppareils();
 	}, []);
+
+	const supprimer = async (id: number) => {
+		try {
+			await axios.delete(`${url}/${id}`);
+			setAppareils(appareils.filter((appareil) => appareil.id !== id));
+		} catch (error) {
+			console.error("Erreur lors de la suppression de l'appareil:", error);
+		}
+	};
 
 	return (
 		<Layout>
@@ -50,6 +57,19 @@ const Dashboard = () => {
 								{appareil.type}
 								{appareil.name}
 								{appareil.status}
+
+								<a
+									className="p-2 rounded text-center bg-lime-800"
+									href={`/AjouterAppareil?id=${appareil.id}`}
+								>
+									Modifier
+								</a>
+								<button
+									className="p-2 rounded text-center bg-red-900"
+									onClick={() => supprimer(appareil.id)}
+								>
+									Supprimer
+								</button>
 							</li>
 						))
 					) : (

@@ -13,12 +13,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 							<li>
 								<Link
 									to="/dashboard"
-									className="block btn-primary text-center"
+									className="block btn-primary text-center mb-2"
 								>
 									🏠 Dashboard
 								</Link>
 								<Link
-									to="/add"
+									to="/dashboard/add"
 									className="block btn-primary text-center"
 								>
 									Ajouter

@@ -17,6 +17,10 @@ function App() {
 					path="/dashboard/add"
 					element={<AjouterAppareil />}
 				/>
+				<Route
+					path="/dashboard/add/:id"
+					element={<AjouterAppareil />}
+				/>
 				{/* <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} /> */}
 

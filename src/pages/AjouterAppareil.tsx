@@ -6,8 +6,10 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { IAppareil } from "./Assets/IAppareil";
 
-const url = `${process.env.API_URL}/dashboard/add`;
-const url_appareil = `${process.env.API_URL}/dashboard/`;
+const API_URL = "LLL";
+
+const url = `${API_URL}/dashboard/add`;
+const url_appareil = `${API_URL}/dashboard/`;
 
 export const AjouterAppareil = () => {
 	const { id } = useParams();
@@ -61,7 +63,7 @@ export const AjouterAppareil = () => {
 			<div className="flex items-center justify-center min-h-screen bg-background">
 				<div className="bg-card p-8 rounded-lg shadow-lg w-96">
 					<h1 className="text-3xl font-bold text-primary text-center mb-6">
-						Ajouter un appareil
+						{appareil ? `Modifier ${appareil.name}` : "Ajouter un appareil"}
 					</h1>
 
 					{error && <p className="text-red-500 text-sm text-center">{error}</p>}
