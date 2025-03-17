@@ -3,25 +3,27 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import { IAppareil } from "./Assets/IAppareil";
+import dotenv from "dotenv";
+dotenv.config();
 
-const API_URL = "http://127.0.0.1:8000/appareils/";
+const url = `${process.env.API_URL}/dashboard`;
 
 const Dashboard = () => {
 	const [appareils, setAppareils] = useState([]);
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		const fetchUsers = async () => {
+		const fetchAppareils = async () => {
 			try {
-				const response = await axios.get(API_URL);
+				const response = await axios.get(url);
 				setAppareils(response.data);
 			} catch (error) {
 				console.error("Erreur lors du chargement des utilisateurs:", error);
 			}
 		};
 
-		fetchUsers();
-	}, [navigate]);
+		fetchAppareils();
+	}, []);
 
 	return (
 		<Layout>
@@ -43,10 +45,10 @@ const Dashboard = () => {
 								key={appareil.id}
 								className="bg-background p-3 rounded-lg"
 							>
-								{appareil.locaton}
+								{appareil.room}
 								{appareil.type}
 								{appareil.name}
-								{appareil.statut}
+								{appareil.status}
 							</li>
 						))
 					) : (
