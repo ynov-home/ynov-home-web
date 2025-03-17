@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import dotenv from "dotenv";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import { IAppareil } from "./Assets/IAppareil";
-import dotenv from "dotenv";
+
 dotenv.config();
 
 const url = `${process.env.API_URL}/dashboard`;
