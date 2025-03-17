@@ -8,8 +8,8 @@ import { IAppareil } from "./Assets/IAppareil";
 
 const API_URL = "LLL";
 
-const url = `${API_URL}/dashboard/add`;
-const url_appareil = `${API_URL}/dashboard/`;
+const url = `${API_URL}/add`;
+const url_appareil = `${API_URL}/`;
 
 export const AjouterAppareil = () => {
 	const { id } = useParams();
