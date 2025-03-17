@@ -18,7 +18,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 									🏠 Dashboard
 								</Link>
 								<Link
-									to="/dashboard/add"
+									to="/add"
 									className="block btn-primary text-center"
 								>
 									Ajouter
