@@ -12,7 +12,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 						<ul className="space-y-3">
 							<li>
 								<Link
-									to="/dashboard"
+									to="/"
 									className="block btn-primary text-center mb-2"
 								>
 									🏠 Dashboard

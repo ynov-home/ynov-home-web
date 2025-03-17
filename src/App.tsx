@@ -9,16 +9,15 @@ function App() {
 		<Router>
 			<Routes>
 				<Route
-					path="/dashboard"
 					index
 					element={<Dashboard />}
 				/>
 				<Route
-					path="/dashboard/add"
+					path="/add"
 					element={<AjouterAppareil />}
 				/>
 				<Route
-					path="/dashboard/add/:id"
+					path="/add/:id"
 					element={<AjouterAppareil />}
 				/>
 				{/* <Route path="/login" element={<Login />} />
