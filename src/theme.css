@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ajout de styles personnalisés pour AI Pairing */
+body {
+    @apply bg-background text-text;
+}
+
+/* Classes personnalisées pour les boutons */
+.btn-primary {
+    @apply bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700;
+}
+
+.btn-secondary {
+    @apply bg-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700;
+}
+
+/* Conteneurs */
+.container-box {
+    @apply bg-card p-6 rounded-lg shadow-lg;
+}
